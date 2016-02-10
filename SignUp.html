@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <!-- Website Title & Description for Search Engine purposes -->
+        <title>Face Detection Project</title>
+        <meta name="description" content="Learn how to code your first responsive website with the new Twitter Bootstrap 3.">
+
+        <!-- Mobile viewport optimized -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <!-- Bootstrap CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="includes/css/styles.css">
+
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <script src="includes/js/modernizr-2.6.2.min.js"></script>
+
+    </head>
+    <body>
+
+        <div class="container" id="main">
+
+            <div class="navbar navbar-fixed-top">
+                <div class="container">
+
+                    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                    <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+
+                    <div class="nav-collapse collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="index.php">Home</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <strong class="caret"></strong></a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Face Detection</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Finger Print Recognition</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Iris Recognition</a>
+                                    </li>
+
+                                    <li class="divider"></li>
+
+                                    <li class="dropdown-header">More...</li>
+
+                                    <li>
+                                        <a href="#">RFID</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Virtual Reality</a>
+                                    </li>
+                                </ul><!-- end dropdown-menu -->
+                            </li>
+                        </ul>
+
+                        <form class="navbar-form pull-left">
+                            <input type="text" class="form-control" placeholder="Search this site..." id="searchInput">
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                        </form><!-- end navbar-form -->
+
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> My Account <strong class="caret"></strong></a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#"><span class="glyphicon glyphicon-wrench"></span> Settings</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="SignUp.html"><span class="glyphicon glyphicon-refresh"></span> Update Profile</a>
+                                    </li>
+
+                                    <li>
+
+                                        <a href="#Login" role="button" data-toggle="modal"><span class="glyphicon glyphicon-hand-up"></span> Login </a>
+
+
+                                    </li>
+
+                                    <li class="divider"></li>
+
+                                    <li>
+                                        <a href="Index.php"><span class="glyphicon glyphicon-off"></span> Sign out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul><!-- end nav pull-right -->
+
+                    </div><!-- end nav-collapse -->
+
+                </div><!-- end container -->
+            </div><!-- end navbar -->
+
+
+            <div class="row" id="bigCallout">
+                <div class="col-12">
+                    <div class="well" style="margin-top: 60px">
+                        <div class="page-header">
+                            <h1>Sign Up <small>Sign Up with face</small></h1>
+                        </div><!-- end page-header -->
+
+                        <div style="text-align:center;">
+                            <video id="screenshot-stream" class="videostream" autoplay="" style="border:1px solid #cccccc; width:500px; height:auto; margin-bottom:10px"></video>
+                            <p><button class="btn btn-warning" type="button" id="screenshot-button">Capture</button> <button class="btn btn-danger" type="button" id="screenshot-stop-button">Stop</button></p>
+                        </div>
+                        <div style="text-align:center;">
+                            <canvas id="screenshot-canvas" style="border:1px solid #cccccc; width:500px; height:auto;"></canvas>
+
+                        </div>
+                        <form id="register-form" action="../fd/src/Controller/DetectController.php" class="form-vertical" method="POST">
+                            <div><label for="name">Type in your name here:</label>&nbsp;<input class="form-control" type="text" id="name" required="required"></div>
+                            <div class="text-center"><button class="btn btn-primary" id="photo-submit" type="submit">Submit</button></div>
+                            <div><span class="response"></span></div>
+                        </form>
+                        <p></p>
+                    </div><!-- end well -->
+
+                </div><!-- end col-12 -->
+            </div><!-- end bigCallout -->
+
+
+        </div><!-- end container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h6>Copyright &copy; 2015 SUN Yuhao & Xie Fang</h6>
+                    </div><!-- end col-sm-2 -->
+
+                    <div class="col-sm-6">
+                        <h6>About Us</h6>
+                        <p>
+                          Team SUN Yuhao XIE Fang
+                        </p> 
+                    </div><!-- end col-sm-4 -->
+
+                    <div class="col-sm-2">
+                        <h6>Navigation</h6>
+                        <ul class="unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Links</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div><!-- end col-sm-2 -->
+
+                    <div class="col-sm-2">
+                        <h6>Follow Us</h6>
+                        <ul class="unstyled">
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Google Plus</a></li>
+                        </ul>
+                    </div><!-- end col-sm-2 -->
+
+
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </footer>
+
+
+        <!-- All Javascript at the bottom of the page for faster page loading -->
+
+        <!-- First try for the online version of jQuery-->
+        <script src="http://code.jquery.com/jquery.js"></script>
+
+        <!-- If no online access, fallback to our hardcoded version of jQuery -->
+        <script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+
+        <!-- Bootstrap JS -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Custom JS -->
+        <script src="includes/js/script.js"></script>
+
+        <script>
+            var errorCallback = function (e) {
+                console.log('Reeeejected!', e);
+            };
+            var j = jQuery.noConflict();
+            j(document).ready(function () {
+
+                navigator.getUserMedia = (navigator.getUserMedia ||
+                        navigator.webkitGetUserMedia ||
+                        navigator.mozGetUserMedia ||
+                        navigator.msGetUserMedia);
+
+                // Get handles on the video and canvas elements
+                var video = document.querySelector('video');
+                var canvas = document.querySelector('canvas');
+                // Get a handle on the 2d context of the canvas element
+                var ctx = canvas.getContext('2d');
+                // Define some vars required later
+                var w, h, ratio;
+                var capture = document.querySelector('#screenshot-button');
+                var stop = document.querySelector('#screenshot-stop-button');
+                var submit = document.querySelector('#photo-submit');
+                j('form#register-form').submit(function (e) {
+                    e.preventDefault();
+                    var username = j('form#register-form').find('input#name').val();
+                    var dataUrl = canvas.toDataURL();
+                    //            j.ajax({
+                    //                type: j('form').attr('method'),
+                    //                url: j('form').attr('action'),
+                    //                data:{ image: dataUrl, username: username},
+                    //                success: function(response){
+                    //                    console.log(response);
+                    //                }
+                    //            });
+                    var image = new Image();
+                    image.src = canvas.toDataURL('image/jpeg');
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'http://api.cn.faceplusplus.com/v2/' + 'detection/detect?api_key=' + 'a774702fd3316577efb8b2f93f47b2f4' + '&api_secret=' + 'FkkS6T6mPbUofnQEle4PkUF9NitN8pNm', true);
+                    var fd = new FormData();
+                    fd.append('img', dataURItoBlob(image.src));
+                    xhr.send(fd);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                var result = JSON.parse(xhr.responseText);
+                                if (result.face.length == 0) {
+                                    console.log('no face found!');
+                                    return false;
+                                }
+                                if (result.face.length > 1) {
+                                    console.log(result.face.length);
+                                    return false;
+                                }
+                                j.ajax({
+                                    type: j('form#register-form').attr('method'),
+                                    url: j('form#register-form').attr('action'),
+                                    data: {image: dataUrl, username: username, face: result},
+                                    success: function (response) {
+                                        console.log(response);
+                                        alert("Register Success!");
+//                                       
+//                                        if (response == "success") {
+//                                            alert("success");
+//                                            location.href = "front.html";
+//                                        }
+                                    }
+                                });
+                            }
+                        }
+                    };
+                    return false;
+                });
+
+                j('#screenshot-button').click(function (e) {
+                    ctx.fillRect(0, 0, w, h);
+                    ctx.drawImage(video, 0, 0, w, h);
+                });
+
+                // Add a listener to wait for the 'loadedmetadata' state so the video's dimensions can be read
+                video.addEventListener('loadedmetadata', function () {
+                    // Calculate the ratio of the video's width to height
+                    ratio = video.videoWidth / video.videoHeight;
+                    // Define the required width as 100 pixels smaller than the actual video's width
+                    w = video.videoWidth - 100;
+                    // Calculate the height based on the video's width and the ratio
+                    h = parseInt(w / ratio, 10);
+                    // Set the canvas width and height to the values just calculated
+                    canvas.width = w;
+                    canvas.height = h;
+                }, false);
+
+                j('#screenshot-stop-button').click(function (e) {
+                    e.preventDefault();
+                    video.stop();
+                });
+
+                if (navigator.getUserMedia) {
+                    navigator.getUserMedia(
+                            // constraints
+                                    {
+                                        video: true
+                                    },
+                            // successCallback
+                            function (localMediaStream) {
+                                var video = document.querySelector('video');
+                                video.src = window.URL.createObjectURL(localMediaStream);
+
+                                // Do something with the video here, e.g. video.play()
+                            },
+                                    // errorCallback
+                                            function (err) {
+                                                console.log("The following error occured: " + err);
+                                            }
+                                    );
+                                } else {
+                            console.log("getUserMedia not supported");
+                        }
+                        /**
+                         * Reference: http://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata
+                         */
+                        function dataURItoBlob(dataURI) {
+                            var binary = atob(dataURI.split(',')[1]);
+                            var array = [];
+                            for (var i = 0; i < binary.length; i++) {
+                                array.push(binary.charCodeAt(i));
+                            }
+                            return new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
+                        }
+                    });
+        </script>
+
+    </body>
+</html>
+
